@@ -1,5 +1,5 @@
-// ─── Page Loader (Bulletproof Fix) ──────────────────
-// DOM එක load වුණ ගමන් loader එක අයින් කරනවා (images load වෙනකම් ඉන්නේ නෑ)
+
+
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const loader = document.getElementById('pageLoader');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1500);
 });
 
-// Fallback: මොනවා හරි අවුලක් ගිහින් හිරවුණොත් තත්පර 3කින් අනිවාර්යයෙන් loader එක අයින් කරනවා
+
 setTimeout(() => {
     const loader = document.getElementById('pageLoader');
     if (loader && !loader.classList.contains('hidden')) {
@@ -15,7 +15,7 @@ setTimeout(() => {
     }
 }, 3000);
 
-// ─── AOS Init ───────────────────────────────────────
+
 if (typeof AOS !== 'undefined') {
     AOS.init({
         duration: 900,
@@ -25,7 +25,7 @@ if (typeof AOS !== 'undefined') {
     });
 }
 
-// ─── Typing Effect ───────────────────────────────────
+
 if (document.querySelector('.typing-text') && typeof Typed !== 'undefined') {
     new Typed(".typing-text", {
         strings: [
@@ -41,7 +41,7 @@ if (document.querySelector('.typing-text') && typeof Typed !== 'undefined') {
     });
 }
 
-// ─── Navbar Scroll Effect ────────────────────────────
+
 const nav = document.getElementById('navbar');
 window.addEventListener("scroll", () => {
     if (!nav) return;
@@ -52,7 +52,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// ─── Hamburger Menu ──────────────────────────────────
+
 const hamburger = document.getElementById('hamburger');
 const navMenu   = document.getElementById('nav-menu');
 
@@ -70,7 +70,6 @@ if (hamburger && navMenu) {
     });
 }
 
-// ─── Smooth Scroll ───────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -81,7 +80,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ─── Active Nav Link Highlight ───────────────────────
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('nav ul li a');
 
@@ -99,7 +98,7 @@ if (sections.length > 0 && navLinks.length > 0) {
     sections.forEach(section => observer.observe(section));
 }
 
-// ─── GitHub API Integration ──────────────────────────
+
 const GITHUB_USERNAME = 'Sathmina1021';
 const GITHUB_API      = `https://api.github.com/users/${GITHUB_USERNAME}`;
 const REPOS_API       = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`;
@@ -253,7 +252,7 @@ function showRepoError() {
 
 loadGitHubData();
 
-// ─── Number Counter Animation (Fixed Bug Here) ────────
+
 function animateCounter(el, target, duration = 1200) {
     if (!el) return;
     let start = null; // Error fixed (Was 'const start = 0')
