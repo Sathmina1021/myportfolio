@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const loader = document.getElementById('pageLoader');
